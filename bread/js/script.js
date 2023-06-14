@@ -21,7 +21,7 @@ headerone.forEach((h1) => {
   h1.style.fontSize = `${(69 - 1) / size}` + 'vw';
 });
 
-// Randomize text case
+/* Randomize text case
 
 var elements = document.querySelectorAll('h1'); // h1 can be replaced with whichever .class
 for (var i = 0; i < elements.length; i++) {
@@ -43,4 +43,38 @@ function changeCaseOnHover(element) {
     element.textContent = element.textContent.toLowerCase();
   });
 }
+*/
 
+// Better randomize text case
+
+var heading = document.querySelector('h1'); // h1 can be replaced with any .class
+changeCaseRandomly(heading);
+
+function randomCase(text) {
+  var result = '';
+  for (var i = 0; i < text.length; i++) {
+    var random = Math.random();
+    if (random < 0.5) {
+      result += text[i].toUpperCase();
+    } else {
+      result += text[i].toLowerCase();
+    }
+  }
+  return result;
+}
+
+function changeCaseRandomly(element) {
+  var text = element.innerHTML;
+  var intervalId;
+  
+  element.addEventListener('mouseover', function() {
+    intervalId = setInterval(function() {
+      element.innerHTML = randomCase(text);
+    }, Math.random() * 1000 + 500); // Random delay between 0.5 and 1.5 seconds
+  });
+  
+  element.addEventListener('mouseout', function() {
+    clearInterval(intervalId);
+    element.innerHTML = text;
+  });
+}
