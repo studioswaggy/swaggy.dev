@@ -30,8 +30,9 @@ function randomCase(text) {
   var result = '';
   for (var i = 0; i < text.length; i++) {
     var random = Math.random();
-    if (text[i] === '&') {
-      result += '&';
+    if (text.substr(i, 6) === '&nbsp;') {
+      result += '&nbsp;';
+      i += 5; // Skip the next 5 characters
     } else if (random < 0.5) {
       result += text[i].toUpperCase();
     } else {
