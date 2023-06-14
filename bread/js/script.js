@@ -23,24 +23,37 @@ headerone.forEach((h1) => {
 
 // Randomize text case
 
-var elements = document.querySelectorAll('h1'); // h1 can be replaced with whichever .class
-for (var i = 0; i < elements.length; i++) {
-  changeCaseOnHover(elements[i]);
-}
+var swaggytext = document.querySelector('h1'); // h1 can be replaced with any .class
+changeCaseRandomly(swaggytext);
 
 function randomCase(text) {
-  return text.split('').map(function(letter) {
-    return Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase();
-  }).join('');
+  var result = '';
+  for (var i = 0; i < text.length; i++) {
+    var random = Math.random();
+    if (text.substr(i, 6) === '&nbsp;') {
+      result += '&nbsp;';
+      i += 5; // Skip the next 5 characters
+    } else if (random < 0.5) {
+      result += text[i].toUpperCase();
+    } else {
+      result += text[i].toLowerCase();
+    }
+  }
+  return result;
 }
 
-function changeCaseOnHover(element) {
-  element.addEventListener('mouseenter', function() {
-    element.textContent = randomCase(element.textContent);
+function changeCaseRandomly(element) {
+  var text = element.innerHTML;
+  var intervalId;
+
+  element.addEventListener('mouseover', function() {
+    intervalId = setInterval(function() {
+      element.innerHTML = randomCase(text);
+    }, 142);
   });
 
-  element.addEventListener('mouseleave', function() {
-    element.textContent = element.textContent.toLowerCase();
+  element.addEventListener('mouseout', function() {
+    clearInterval(intervalId);
+    element.innerHTML = text;
   });
 }
-
