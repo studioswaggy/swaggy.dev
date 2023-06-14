@@ -18,7 +18,7 @@ headerone.forEach((h1) => {
   if (words.length >= 7) {
     size = 20;
   }
-  h1.style.fontSize = `${(69 - 1) / size}` + 'vw';
+  h1.style.fontSize = `${(50 - 1) / size}` + 'vw';
 });
 
 // Randomize text case
