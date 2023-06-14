@@ -47,6 +47,7 @@ function changeCaseRandomly(element) {
   var intervalId;
 
   element.addEventListener('mouseover', function() {
+    clearInterval(intervalId); // Clear previous interval
     intervalId = setInterval(function() {
       element.innerHTML = randomCase(text);
     }, 142);
