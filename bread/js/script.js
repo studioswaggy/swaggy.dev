@@ -30,7 +30,9 @@ function randomCase(text) {
   var result = '';
   for (var i = 0; i < text.length; i++) {
     var random = Math.random();
-    if (random < 0.5) {
+    if (text[i] === '&') {
+      result += '&';
+    } else if (random < 0.5) {
       result += text[i].toUpperCase();
     } else {
       result += text[i].toLowerCase();
@@ -45,7 +47,7 @@ function changeCaseRandomly(element) {
 
   element.addEventListener('mouseover', function() {
     intervalId = setInterval(function() {
-      element.innerHTML = randomCase(text).replace(/&nbsp;/g, '&nbsp;');
+      element.innerHTML = randomCase(text);
     }, 142);
   });
 
