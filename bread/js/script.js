@@ -50,7 +50,7 @@ function changeCaseRandomly(element) {
     clearInterval(intervalId); // Clear previous interval
     intervalId = setInterval(function() {
       element.innerHTML = randomCase(text);
-    }, 142);
+    }, 100); // Change this number to make it faster (decrease) or slower (increase)!
   });
 
   element.addEventListener('mouseout', function() {
