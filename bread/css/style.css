@@ -23,10 +23,6 @@ body {
   width: 100vw;
 }
 
-h1 {
-  font-weight: 900;
-}
-
 /* full-sized  container that fills up the page */
 .fullbox {
   height: 100%;
@@ -38,6 +34,7 @@ h1 {
   /* example padding, font-size, background, etc */
   padding: 0px;
   font-size: 20px;
+  font-weight: 900;
   font-family: 'Dirtyline3622', sans-serif;
 }
 
