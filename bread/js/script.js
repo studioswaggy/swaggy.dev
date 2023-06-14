@@ -1,3 +1,5 @@
+// Make text fill whole screen width 
+
 let headerone = document.querySelectorAll("h1");
 
 headerone.forEach((h1) => {
@@ -18,3 +20,27 @@ headerone.forEach((h1) => {
   }
   h1.style.fontSize = `${(69 - 1) / size}` + 'vw';
 });
+
+// Randomize text case
+
+var elements = document.querySelectorAll('h1'); // h1 can be replaced with whichever .class
+for (var i = 0; i < elements.length; i++) {
+  changeCaseOnHover(elements[i]);
+}
+
+function randomCase(text) {
+  return text.split('').map(function(letter) {
+    return Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase();
+  }).join('');
+}
+
+function changeCaseOnHover(element) {
+  element.addEventListener('mouseenter', function() {
+    element.textContent = randomCase(element.textContent);
+  });
+
+  element.addEventListener('mouseleave', function() {
+    element.textContent = element.textContent.toLowerCase();
+  });
+}
+
