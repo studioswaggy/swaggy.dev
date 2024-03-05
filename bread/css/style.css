@@ -46,7 +46,7 @@ body {
   font-family: 'Dirtyline3622', sans-serif;
 }
 
-/* For the footer */
+/* For the footer (thanks to https://codepen.io/acordova/pen/WxepQb) */
 .content {
   flex: 1;
 }
@@ -58,7 +58,7 @@ footer {
 }
 
 footer a:link {
-  color: black;
+  color: #301934;
   text-decoration: wavy underline;
 }
 
