@@ -46,6 +46,7 @@ body {
   font-family: 'Dirtyline3622', sans-serif;
 }
 
+/* For the footer */
 .content {
   flex: 1;
 }
@@ -54,7 +55,11 @@ footer {
   text-align: center;
   padding: 20px;
   background: #DEC7FA;
-  color: white;
+}
+
+footer a:link {
+  color: black;
+  text-decoration: wavy underline;
 }
 
 /* Code that wasn't required goes here 😴 for safe keeping I guess 🔐 */
