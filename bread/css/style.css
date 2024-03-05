@@ -25,6 +25,10 @@ body {
   /* use viewport-relative units to cover page fully */
   height: 100vh;
   width: 100vw;
+  /* Make footer function */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* full-sized  container that fills up the page */
@@ -40,6 +44,17 @@ body {
   font-size: 20px;
   font-weight: 900;
   font-family: 'Dirtyline3622', sans-serif;
+}
+
+.content {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #DEC7FA;
+  color: white;
 }
 
 /* Code that wasn't required goes here 😴 for safe keeping I guess 🔐 */
