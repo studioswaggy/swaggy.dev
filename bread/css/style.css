@@ -53,13 +53,17 @@ body {
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 5px;
   background: #DEC7FA;
-}
-
-footer a:link {
-  color: #301934;
-  text-decoration: wavy underline;
+  a:link {
+    color: #301934;
+    text-decoration: wavy underline;
+  }
+  ul > li {
+    display: inline;
+    padding: 0 10px;
+  
+  }
 }
 
 /* Code that wasn't required goes here 😴 for safe keeping I guess 🔐 */
